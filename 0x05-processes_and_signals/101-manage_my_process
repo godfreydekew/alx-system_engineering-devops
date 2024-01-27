@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#Manages manage_my_process
+#When argument is start starts manage_my_process
+#When stop it stops manage_my_process
+#When restart it restarts manage_my_process
+
+case "$1" in
+	"start")
+		./manage_my_process & 
+		echo $$ > /var/run/my_process.pid
+		echo "manage_my_process started"
+		;;
+	"stop")
+		pkill -f manage_my_process
+		rm /var/run/my_process.pid
+		echo "manage_my_process stopped"
+		;;
+	"restart")
+		pkill -f manage_my_process
+		rm /var/run/my_process.pid
+		./manage_my_process & 
+		echo $$ > /var/run/my_process.pid
+		echo "manage_my_process restarted"
+		;;
+	*)
+		echo "Usage: manage_my_process {start|stop|restart}"
+		;;
+esac
