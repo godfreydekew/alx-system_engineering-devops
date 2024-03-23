@@ -1,7 +1,7 @@
 #Kills a process
 
 exec { 'killmenow':
-  path    => '#!/bin/bash',
-  command => 'pkill -f killmenow',
+  path    => '/usr/bin:/usr/sbin:/bin',
+  command => 'pkill killmenow',
 }
 
