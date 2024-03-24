@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Allows the user to login without retyping password
+ssh-copy-id ubuntu@'54.175.54.78'
