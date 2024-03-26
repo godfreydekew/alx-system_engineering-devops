@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
-#using pappet to male changes to our configuration file
+# Automating my Tasks using Puppet
 
-file { '/etc/ssh/ssh_cofig':
-	ensure => present,
-content =>"
-	#ssh client configuration
-	Host*
-	  IdentityFile ~/.ssh/school
-	  PasswordAuthentication no
-	",
+file { '/etc/ssh/ssh_config':
+  ensure  => present,
+content => "
+    # SSH client configuration
+    Host *
+      IdentityFile ~/.ssh/school
+      PasswordAuthentication no
+  ",
 }
