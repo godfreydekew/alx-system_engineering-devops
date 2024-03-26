@@ -1,10 +1,12 @@
-# Client configuration file (w/ Puppet)
-file_line { 'Identity file':
-  ensure => 'present',
-  path   => '/etc/ssh/ssh_config',
-  line   => '    IdentityFile ~/.ssh/school',
-}
-file_line { 'disable password login':
-    path    => '/etc/ssh/ssh_config',
-    line    => '    PasswordAuthentication no',
+#!/usr/bin/env bash
+#using pappet to male changes to our configuration file
+
+file { 'etc/ssh/ssh_config':
+	ensure => present,
+content =>"
+	#ssh client configuration
+	host*
+	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
+	",
 }
