@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-#Allows the user to login without retyping password
-Host 54.175.54.78
-	PasswordAuthentication no
-	IdentityFile ~/.ssh/school
