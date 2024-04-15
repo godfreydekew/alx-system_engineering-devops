@@ -2,4 +2,3 @@
 # Configure ubuntu container to listen on port 80
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx restart
