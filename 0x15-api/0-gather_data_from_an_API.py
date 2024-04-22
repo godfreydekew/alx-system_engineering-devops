@@ -23,4 +23,4 @@ if __name__ == '__main__':
                 done_t += 1
     print(f"Employee {usr.get('name')} is done with tasks({done_t}/{count}):")
     for title in titles:
-        print('\t{}'.format(title))
+        print('\t {}'.format(title))
