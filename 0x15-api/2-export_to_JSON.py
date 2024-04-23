@@ -12,7 +12,7 @@ if __name__ == "__main__":
     list = []
     for todo in todos:
         list.append({
-            "title": todo.get("title"),
+            "task": todo.get("title"),
             "completed": todo.get("completed"),
             "username": usr.get("username")
         })
