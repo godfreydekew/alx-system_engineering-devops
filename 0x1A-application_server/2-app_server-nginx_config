@@ -1,18 +1,22 @@
+
 server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    add_header X-Served-By 484118-web-01;
-    root   /var/www/html;
-    index  index.html index.htm;
-    location /airbnb-onepage/ {
-        proxy_pass http://0.0.0.0:5000/;
+
+    # Use server IP address as domain name.
+    server_name 18.207.2.207
+
+    # HTTP Response Header.
+    add_header X-Served-By 398191-web-01;
+
+    # Serve /airbnb-onepage/ route on AirBnB_clone_v2
+    location = /airbnb-onepage/ {
+        proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
     }
-    location /redirect_me {
-        return 301 http://cuberule.com/;
-    }
+
     error_page 404 /404.html;
     location /404 {
-      root /var/www/html;
-      internal;
+        root /var/www/html;
+        internal;
     }
 }
